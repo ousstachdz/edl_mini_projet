@@ -28,33 +28,12 @@ import { JsonPipe } from '@angular/common';
 })
 export class HomeComponent implements OnInit  {
 
-  projects:ProjectModel[] = []
-  constructor( private project:Project, private http :HttpClient) { }
+
+  constructor( private http :HttpClient) { }
 
   ngOnInit(): void {
-    this.getProjects()
   }
  
-  getProjects(){
-    this.project.getAllProjects()
-    .subscribe((value:any)=>{
-      value.forEach((element:any) => {
-        let p = new ProjectModel(element.id,element.title,element.description,element.link , element.type)
-        this.projects.push(p)
-      });
-    })
-    console.log(this.projects)
-  }
-
-  sendMessage(){
-    let message = new MessageModel('test','test','test@test.com','test')
-     console.log( message )
-    this.http.post('http://127.0.0.1:8000/api/message/create',message,{
-      headers: new HttpHeaders({
-        'Content-Type':'application/json'
-      })
-    })
-  }
 
   move(dom:HTMLElement){
     switch  (dom.innerHTML){
@@ -66,21 +45,21 @@ export class HomeComponent implements OnInit  {
 
         break
       }
-      case ' Skills ':{
+      case 'Faculties':{
         window.scroll({
         top:800,
         behavior:'smooth'
         })
         break
       }
-      case ' Project ':{
+      case ' # ':{
         window.scroll({
         top:1710,
         behavior:'smooth'
         })
         break
       }
-      case ' Contact ':{
+      case ' # ':{
         window.scroll({
         top:2315,
         behavior:'smooth'

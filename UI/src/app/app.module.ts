@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AuthService} from './shared/Services/auth.service'
 import { Project } from './shared/Services/progect.service'
 import { Message } from './shared/Services/message.service';
+import { AcademicYearsService } from './shared/Services/academic_year.service';
 import { AuthRouteGuard } from './shared/guard/auth.route.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from './shared/interceptor/auth.inteceptor';
@@ -29,7 +30,7 @@ import { Interceptor } from './shared/interceptor/auth.inteceptor';
         useClass: Interceptor,
         multi: true
       },
-      AuthService,AuthRouteGuard,Project,Message],
+      AuthService,AuthRouteGuard,AcademicYearsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

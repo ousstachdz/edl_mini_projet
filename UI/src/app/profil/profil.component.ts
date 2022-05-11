@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from '../shared/Services/auth.service'
-import { Message } from '../shared/Services/message.service';
-
+import {AcademicYearsService} from '../shared/Services/academic_year.service'
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
@@ -14,22 +13,25 @@ export class ProfilComponent implements OnInit {
     id : ''
   }
 
-  constructor( private authService:AuthService, private messageService: Message, private route:Router) { }
+  constructor( private authService:AuthService, private AcademicYearsService : AcademicYearsService, private route:Router) { }
 
   ngOnInit(): void {
+
     this.authService.userInfo.subscribe(value=>{
       if(value){
         this.user.id = value.user_id
       }
-
     })
-    this.getAllmesssages()
+
+    this.getAllyears()
   }
-  getAllmesssages(){
-    this.messageService.getAllMessages().subscribe( (value:any) =>{
+
+  getAllyears(){
+    this.AcademicYearsService.getAll().subscribe( (value:any) =>{
       console.log(value)
     })
   }
+
   logout(){
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
