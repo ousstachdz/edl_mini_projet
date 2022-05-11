@@ -1,0 +1,62 @@
+.setcenter {
+  left: 50%;
+  transform: translate(-50%);
+}
+.main {
+  top: 25%;
+}
+li {
+  padding: 1rem 1rem 1rem 0rem;
+}
+.emoji {
+  font-family: Verdana, sans-serif;
+}
+/* .ballOne{
+    box-shadow: 165px 127px 125px 80px rgba(255, 0, 0, 0.849);
+    display: inline;
+    transition: ease-in-out 1000ms;
+}
+.ballTow{
+    box-shadow: 965px 127px 125px 80px rgb(0, 68, 255);
+    display: inline;
+    transition: ease-in-out 1000ms;
+}
+.ballThree{
+    box-shadow: 565px 927px 125px 80px rgb(255, 0, 255);
+    display: inline;
+    transition: ease-in-out 1000ms;
+}
+.ballThree:hover{
+    box-shadow: 165px 127px 125px 80px rgba(255, 0, 0, 0.849);
+    display: inline;
+    
+}
+.ballOne:hover{
+    box-shadow: 965px 127px 125px 80px rgb(255, 0, 255);
+    display: inline;
+    
+}
+.ballTow:hover{
+    box-shadow: 965px 127px 125px 100px rgb(0, 68, 255);
+    display: inline;
+}
+/* span,.redtextcolor{
+ color: #6d0006;
+}
+.textcolor{
+    color: #131313;
+}
+.hellobg{
+    background-color: #6d0006;
+}
+.redborder{
+    border: #6d0006 solid;
+}
+li{
+    padding: 1rem 1rem 1rem 0rem;
+
+}
+ul{
+    display: flex;
+    flex-direction: row;
+} */

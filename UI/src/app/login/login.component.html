@@ -1,0 +1,38 @@
+<div class="">
+    <div class="flex flex-col justify-center p-16  ">
+        
+<div class="py-10"></div>
+        <div class="bg-gray-100 w-96 self-center  rounded-xl p-4 shadow-lg">
+        <form>
+    <div> 
+        <div class="">
+            <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="email">Email</label>
+            <input 
+            class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
+            id="email"
+            name="email"
+            type="email" 
+            placeholder="example@example.com"
+            [(ngModel)]="logindata.email">
+        </div>
+
+        <div class="">
+
+            <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="password">Password</label>
+        <input 
+            class="min-w-full text-md  border-white text-gray-600 rounded-full  pl-4 pr-2 py-2 focus:outline-none"
+            id="password"    
+            name="password"
+            type="password"
+            placeholder="abcd1234"
+
+            [(ngModel)]="logindata.password"> <br>  
+        </div>
+        <a href="#" class="flex justify-end  text-gray-800 text-sm mt-4 p-2 hover:text-blue-700 transition duration-300">Forget your password ?</a>
+        <button class="block bg-blue-700 text-white font-bold rounded-full p-1 my-4 w-full hover:bg-blue-600 transition duration-300" value="submit" (click)="userlogin()">Login</button>
+
+        </div>
+    </form>
+</div>
+</div>
+</div>
