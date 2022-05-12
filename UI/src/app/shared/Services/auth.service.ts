@@ -9,10 +9,12 @@ export class AuthService {
     userInfo:BehaviorSubject<any> = new BehaviorSubject(null);
     jwtHelper:JwtHelperService = new JwtHelperService();
 
+    SERVER_URL: string = "http://127.0.0.1:8000";
     allowedUrls = {
-        'loginUrl' : 'http://127.0.0.1:8000/api/token/',
-        'refreshUrl' : 'http://127.0.0.1:8000/api/token/refresh/',
-        'listProjectUrl' : 'http://127.0.0.1:8000/api/projects/',
+        'loginUrl' : `${this.SERVER_URL}/api/token/`,
+        'refreshUrl' : `${this.SERVER_URL}/api/token/refresh/`,
+        'listProjectUrl' : `${this.SERVER_URL}/api/token/projects/`,
+        'postDemand' : `${this.SERVER_URL}/api/create/`,
 
     }
 

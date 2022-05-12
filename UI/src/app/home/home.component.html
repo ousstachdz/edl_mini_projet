@@ -31,8 +31,8 @@
     <div class=" w-10/12 setcenter main absolute  px-4 ">
         <div class="flex-col md:flex-row flex justify-between pb-40">
             <div class="md:w-1/2 h-96  flex flex-col justify-center">
-                <h1 @fade class="text-5xl">l’Université Abdelhamid Mehri</h1>
-                <h1 @fade class="text-5xl pb-2">la ville de <span class="text-blue-700">Constantine </span> Ali Mendjli.</h1>
+                <h1 @fade class="text-5xl">l’Université Abdelhamid <br>Mehri Constantine 2</h1>
+                <h1 @fade class="text-5xl pb-2"><span class="text-blue-700">Smart </span>University</h1>
                 <p @fade class="text-gray-800">
                     la simplification du processus d'inscription et de transfert via la plateforme numérique
                 </p>
@@ -114,124 +114,8 @@
         <div class=" flex flex-col  items-center">
             <h1 class="text-3xl py-16  ">Transfer</h1>
             <div class="">
-                <div class="flex flex-col justify-center  ">
-                <div class="bg-gray-100 self-center  rounded-xl p-4 shadow-lg">
-                    <form class="flex flex-row">
-                        <div class="w-96 p-2 ">
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="nom">Le nom</label>
-                                <input class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                id="nom"
-                                name="nom"
-                                placeholder="je m'appelle ...">
-                            </div>
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="prenom">Le prenome</label>
-                                <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                id="prenom"
-                                name="prenom"
-                                placeholder="example">
-                            </div>
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="dob">La date de nissance</label>
-                                <input
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                type="date" id="start" name="trip-start"
-                                value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
-                            </div>
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="address">L'address</label>
-                                <input class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                id="address"
-                                name="address"
-                                placeholder="Ali Mengele BP 67 Constantine Algérie">
-                            </div>
-
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="email">Email</label>
-                                <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                id="email"
-                                name="email"
-                                type="email" 
-                                placeholder="example@example.com">
-                            </div>
-
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="blocked_year">Année bloquée</label>
-                                <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                id="blocked_year"
-                                name="blocked_year"
-                                type="blocked_year" 
-                                placeholder="2017-2018 sinon vide">
-                            </div>
-                        </div>
-                        <div class="w-96 p-2"> 
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="university">L'university</label>
-                                <input class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                id="university "
-                                name="university "
-                                placeholder="Constantine 1">
-                            </div>
-                            
-                            <div class="">
-                                <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="specialite">La specialite</label>
-                            <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full  pl-4 pr-2 py-2 focus:outline-none"
-                                id="specialite"    
-                                name="specialite"
-                                placeholder="Informatique"> <br>  
-                            </div>
-                            
-                            <div class="">
-                                <label class="block  pl-4 pr-2 py-2 text-gray-800 font-bold" for="level">Le niveau</label>
-
-                                <select name="level" id="level"
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                >
-                                    <option value="volvo">L1</option>
-                                    <option value="volvo">L1 L2</option>
-                                    <option value="saab">L2 L3</option>
-                                    <option value="mercedes">L3</option>
-                                  </select>
-                            </div>
-                            <div class="">
-                                <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="bac">L'annee du BAC</label>                                
-                                <input
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
-                                type="number" min="1900" max="2099" step="1" value="2017">
-                                <br>  
-                            </div>
-
-                            
-
-                            <div class="">
-                                <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="specialite">Le moyenne cumulée</label>
-                            <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full  pl-4 pr-2 py-2 focus:outline-none"
-                                id="moyenne"    
-                                name="moyenne"
-                                placeholder="10.00"> <br>  
-                            </div>
-                            
-                            <div class="">
-                                <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="specialite">Le moyenne du BAC</label>
-                            <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full  pl-4 pr-2 py-2 focus:outline-none"
-                                id="moyenne"    
-                                name="moyenne"
-                                placeholder="10.00"> <br>  
-                            </div>
-                            
-                            <button class="block bg-blue-700 text-white font-bold rounded-full p-1 my-4 w-full hover:bg-blue-600 transition duration-300" value="submit">Envoyer</button>
-                        </div>
-                    </form>
-                </div>
-        </div> 
+                <app-contact></app-contact>
+                
 
         <div class="mt-32">
         <div class="flex flex-col justify-center items-center pb-32">

@@ -4,3 +4,20 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+.btn  {
+    color:white;
+    font-weight: 500;
+    background-color: rgb(29 78 216 );
+    padding: 0.25rem 1rem;
+    border-radius: 30px;
+}
+.btn:hover{
+    background-color: rgb(34, 77, 196);
+}
+.constraints-info{
+    display: none;
+} 
+.btn-success{
+    display: none;
+
+}

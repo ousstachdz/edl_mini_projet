@@ -5,7 +5,8 @@ import { Observable } from "rxjs";
 export class Message {
 
     constructor(private http:HttpClient){}
-
+    
+    DJANGO_SERVER: string = "http://127.0.0.1:8000";
     getAllMessages():Observable<any> {
         return this.http.get('http://127.0.0.1:8000/api/messages/')
     }

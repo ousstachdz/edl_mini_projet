@@ -1,10 +1,6 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { ProjectModel } from '../models/project';
-import { Project } from '../shared/Services/progect.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { MessageModel } from '../models/message';
-import { JsonPipe } from '@angular/common';
+import { animate, style, transition, trigger } from '@angular/animations';
+
 
 @Component({
   selector: 'app-home',
@@ -26,14 +22,11 @@ import { JsonPipe } from '@angular/common';
   ]
   
 })
-export class HomeComponent implements OnInit  {
+export class HomeComponent   {
 
 
-  constructor( private http :HttpClient) { }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
- 
 
   move(dom:HTMLElement){
     switch  (dom.innerHTML){
