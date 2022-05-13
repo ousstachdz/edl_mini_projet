@@ -41,20 +41,27 @@ export class ContactComponent implements OnInit  {
 
 uploadFile(event: any){
   if (event.target.files.length > 0) {
-    let file = event.target.files[0];
+     this.file = event.target.files[0];
 
+    }
   }
-}
  
   
   onSubmit() {
-    console.log(this.form.value)
+    console.log( this.form.value)
     let data = this.form.value;
+  
     data['AcademicYear'] = '1';
-    data['path'] = this.file;
+    
+    var formData = new FormData();
+    for (const [key, value] of Object.entries(data)) {
+      formData.append(key , value.toString())
+    }
+    formData.append('path', this.file);
+    
 
     // data['path']['filename'] = this.form.value['first_name'];
-    this.demandService.postDemand(data).subscribe((data)=>{console.log(data)}
+    this.demandService.postDemand(formData).subscribe((data)=>{console.log(data)}
     ,(error)=>{console.log(error)});
   }
 
