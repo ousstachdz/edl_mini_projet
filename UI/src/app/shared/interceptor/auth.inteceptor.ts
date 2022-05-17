@@ -16,7 +16,7 @@ export class Interceptor implements HttpInterceptor {
         let userInfo = this.authService.userInfo.getValue()
         if (!this.authService.isAllowedUrl(req.url)){
             if (userInfo && userInfo.user_id ){
-                if(Date.now() >= (Number(userInfo.exp)*1000)){
+                if(Date.now() > (Number(userInfo.exp)*1000)){
 
                     const payload = { refresh: userInfo.refresh_token}
                     this.authService.refreshToken(payload).subscribe((value:any)=>{

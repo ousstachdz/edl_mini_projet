@@ -77,4 +77,8 @@ export class AuthService {
     refreshToken(payload:any):Observable<any>{
         return this.http.post(this.allowedUrls.refreshUrl,payload) 
     }
+    getUser(id:any):Observable<any>{
+        return this.http.get(`${this.SERVER_URL}/api/get_user/${id}`) 
+    }
+
 }

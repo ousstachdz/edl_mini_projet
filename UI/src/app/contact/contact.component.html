@@ -82,12 +82,16 @@
                             
                             <div class="">
                                 <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="specialite">La specialite</label>
-                            <input 
-                                class="min-w-full text-md  border-white text-gray-600 rounded-full  pl-4 pr-2 py-2 focus:outline-none"
-                                formControlName="specialite"
-                                id="specialite"    
-                                name="specialite"
-                                placeholder="Informatique"> <br>  
+                                <select name="specialite" id="specialite"
+                                class=" w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
+                                >
+                                <option value="Nouvelles Technologies">Nouvelles Technologies</option>
+                                <option value="Techniques Des Activités Physiques Et Sportives">Techniques Des Activités Physiques Et Sportives</option>
+                                <option value="Sciences Humaines Et Des Sciences Sociales">Sciences Humaines Et Des Sciences Sociales</option>
+                                <option value="Psychologie Et Des Sciences De L’éducation">Psychologie Et Des Sciences De L’éducation</option>
+                                <option value="Sciences Économiques, Commerciales Et Des Sciences De Gestion">Sciences Économiques, Commerciales Et Des Sciences De Gestion</option>
+                                <option value="Bibliothéconomie">Bibliothéconomie</option>
+                              </select>
                             </div>
                             
                             <div class="">
@@ -97,11 +101,11 @@
                                 formControlName="level"
                                 class="min-w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
                                 >
-                                    <option value="l1">L1</option>
-                                    <option value="l1l2">L1 L2</option>
-                                    <option value="l2">L2</option>
-                                    <option value="l2l3">L2 L3</option>
-                                    <option value="l3">L3</option>
+                                <option value="L1 Admis">L1 Admis</option>
+                                    <option value="L1 Ajourne">L1 Ajourne</option>
+                                    <option value="L2 Ajourne">L2 Ajourne</option>
+                                    <option value="L2 Admis">L2 Admis</option>
+                                    <option value="L3 Ajourne">L3 Ajourne</option>
                                   </select>
                             </div>
                             <div class="">

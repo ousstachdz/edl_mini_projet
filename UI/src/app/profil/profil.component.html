@@ -1,11 +1,76 @@
-<div class="grid grid-cols-12">
-<div></div><div class="p-4 col-span-10">
-
-    <div class="flex justify-between">
-        <h1 class="p-2">user id {{user.id}}</h1>
-        <button (click)="logout()">logout</button>
+<div class="fixed w-full bg-white z-50">
+  <div class="grid grid-cols-12 shadow-md ">
+    <div></div>
+    <div class="flex justify-between col-span-10 p-2 items-center">
+      <div class="flex items-center">
+        <mat-icon>account_circle</mat-icon> <h1 class="p-2">{{user.email}}</h1>
+      </div>
+      <div>
+        <div class="flex items-center">
+          
+          <a class="p-2 cursor-pointer" (click)="logout()">
+            logout
+          </a>
+          <mat-icon>logout</mat-icon>
+            
+          </div>
+      </div>
     </div>
-    <div class="grid grid-cols-4 pt-20 pb-5">
+  </div>
+</div>
+<div class="grid grid-cols-12">
+<div></div>
+<div class="p-4 col-span-10">
+    <div class="bg-gray-100 mt-20 p-4">
+      <form action="" class="flex flex-row p-2">
+        <div class=" w-1/5 p-1">
+          <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="year">L'annee</label> 
+        <select
+          name="year"
+          id="year"
+          (change)="selectedYear($event)"
+            class="w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none ">
+            <option  *ngFor="let item of years ; let i = index" value="{{i}}">{{item.bac_year}}</option>
+        </select>
+      </div>
+      <div class="w-1/5 p-1">
+        <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="specialite">La specialite </label> 
+        <select name="specialite" id="specialite"
+        class=" w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
+        >
+        <option value="2018">Touts</option>
+        <option value="2019">Nouvelles Technologies</option>
+        <option value="2020">Techniques Des Activités Physiques Et Sportives</option>
+        <option value="2021">Sciences Humaines Et Des Sciences Sociales</option>
+        <option value="2022">Psychologie Et Des Sciences De L’éducation</option>
+        <option value="2022">Sciences Économiques, Commerciales Et Des Sciences De Gestion</option>
+        <option value="2022">Bibliothéconomie</option>
+      </select>
+    </div>
+      <div class="w-1/5 p-1 ">
+        <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="etat">L'etat du Demande</label> 
+
+        <select name="etat" id="etat"
+          class="w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
+          >
+          <option value="2022">touts</option>
+          <option value="2018">Acceptation primaire</option>
+          <option value="2019">Définitivement refusé</option>
+          <option value="2020">Inacceptable</option>
+          <option value="2021">Acceptable</option>
+        </select>
+      </div>
+        <div class="w-2/5 p-1">
+          <label class="block pl-4 pr-2 py-2 text-gray-800 font-bold" for="bac">L'annee du BAC</label>                                
+          <input
+          class=" w-full text-md  border-white text-gray-600 rounded-full pl-4 pr-2 py-2 focus:outline-none "
+          type="text" 
+          placeholder="recharchez">
+          <br>  
+      </div>
+    </form>
+  </div>
+    <div class="grid grid-cols-4 pt-12 pb-5">
       <div class="flex flex-col justify-center  rounded-t-2xl">
         <div>Acceptation primaire</div>
         <div class=" bg__purple min-w-min h-2"></div>
@@ -23,9 +88,19 @@
         <div class=" bg__green min-w-min h-2"></div>
       </div>
     </div>
-    <div class="grid grid-cols-4 ">
-                      <section ng-repeat="card in cards" 
-                               class="card theme-purple "
+      <div 
+      *ngFor="let student of demands "
+      class="grid grid-cols-4 mt-2">
+      
+      <div *ngIf="student.state == 'refuse'"></div>
+      <div *ngIf="student.state == 'inaccep'"></div>
+      <div *ngIf="student.state == 'inaccep'"></div>
+      <div *ngIf="student.state == 'accep'"></div>
+      <div *ngIf="student.state == 'accep'"></div>
+      <div *ngIf="student.state == 'accep'"></div>
+                     <section
+                     [ngClass]="student.state == 'refuse' ? 'card theme-red': student.state == 'inaccep' ? 'card theme-orange'
+                     : student.state == 'accep' ? 'card theme-green': 'card theme-purple'"
                                data-color="theme-purple ">
                         <div class="card__map">
                           <div class="card__map__inner"></div>
@@ -57,24 +132,24 @@
                           <div class="card__part__side m--back">
                             <div class="card__part__inner card__face">
                               <div class="card__face__colored-side"></div>
-                              <h3 class="card__face__price">L3</h3>
+                              <h3 class="card__face__price">{{student.level}}</h3>
                               <div class="card__face__divider"></div>
                               <div class="card__face__path"></div>
                               <div class="card__face__from-to">
-                                <p>Skikda, Informatique</p>
-                                <p>M1, Genie Logecial</p>
+                                <p>University{{student.university}} </p>
+                                <p>{{student.last_name}}, {{student.first_name}}</p>
                               </div>
                               <div class="card__face__deliv-date">
-                                BAC:2017
-                                <p>delivTime</p>
+                                BAC:{{student.bac_year}}
+                                <p>{{student.block_year}}</p>
                               </div>
                               <div class="card__face__stats card__face__stats--req">
-                                Requests
-                                <p>requests</p>
+                                 BAC
+                                <p>{{student.bac_avg}}</p>
                               </div>
                               <div class="card__face__stats card__face__stats--pledge">
-                                Pledge
-                                <p>pledge</p>
+                                cumulative
+                                <p>{{student.avg_cumulative}}</p>
                               </div>
                               <div class="card__face__stats card__face__stats--weight">
                               </div>
@@ -87,69 +162,5 @@
         <div></div>
     </div>
     
-    <div class="grid grid-cols-4">
-      <div></div>
-      <section ng-repeat="card in cards" 
-               class="card theme-green "
-               data-color="theme-green ">
-        <div class="card__map">
-          <div class="card__map__inner"></div>
-        </div>
-        <section class="card__part card__part-1">
-          <div class="card__part__inner">
-            <header class="card__header">
-              <div class="card__header__close-btn"></div>
-              <span class="card__header__id"># pinko</span>
-              <span class="card__header__price">$pinko</span>
-            </header>
-            <div class="card__stats" >
-              <div class="card__stats__item card__stats__item--req">
-                <p class="card__stats__type">Requests</p>
-                <span class="card__stats__value"></span>
-              </div>
-              <div class="card__stats__item card__stats__item--pledge">
-                <p class="card__stats__type">Pledge</p>
-                <span class="card__stats__value">$pinko</span>
-              </div>
-              <div class="card__stats__item card__stats__item--weight">
-                <p class="card__stats__type">Weight</p>
-                <span class="card__stats__value"> oz</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="card__part card__part-2">
-          <div class="card__part__side m--back">
-            <div class="card__part__inner card__face">
-              <div class="card__face__colored-side"></div>
-              <h3 class="card__face__price">L3</h3>
-              <div class="card__face__divider"></div>
-              <div class="card__face__path"></div>
-              <div class="card__face__from-to">
-                <p>Skikda, Informatique</p>
-                <p>M1, Genie Logecial</p>
-              </div>
-              <div class="card__face__deliv-date">
-                BAC:2017
-                <p>delivTime</p>
-              </div>
-              <div class="card__face__stats card__face__stats--req">
-                Requests
-                <p>requests</p>
-              </div>
-              <div class="card__face__stats card__face__stats--pledge">
-                Pledge
-                <p>pledge</p>
-              </div>
-              <div class="card__face__stats card__face__stats--weight">
-               
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-
-<div></div>
-</div>
     </div>
     </div>
